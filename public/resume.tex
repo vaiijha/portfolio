@@ -1,0 +1,148 @@
+% !TEX root = resume.tex
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{empty}
+\urlstyle{same}
+\setlength{\tabcolsep}{0pt}
+\raggedright
+\raggedbottom
+
+% Margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.2in}
+
+% Section style
+\titleformat{\section}
+  {\vspace{-4pt}\large\bfseries}
+  {}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item \small{#1 \vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \small #2 \\
+    \small #3 & \small #4 \\
+  \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \small\textbf{#1} & \small #2 \\
+  \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \textbf{Vaibhav Jha}} \\ \vspace{4pt}
+    Bengaluru, Karnataka, India \\
+    +91-8951548632 \,|\, \href{mailto:vaijha22@gmail.com}{vaijha22@gmail.com} \,|\,
+    \href{https://github.com/vaiijha}{github.com/vaiijha} \,|\,
+    \href{https://www.linkedin.com/in/dytcnn/}{linkedin.com/in/dytcnn} \,|\,
+    \href{https://scholar.google.com/citations?user=NqgJq54AAAAJ\&hl=en}{Google Scholar}
+\end{center}
+
+%----------SUMMARY----------
+\section{Summary}
+\small{
+AI/ML engineer and researcher with 3+ years across industry data platforms and research at IISc. Focus on distributed and serverless systems, agentic AI and MCP on FaaS, quantum--classical workflows, and scalable ML---with peer-reviewed papers at IEEE CCGrid, IEEE IPDPS Workshops, and an arXiv preprint. Previously built ETL and ML pipelines over 50M+ records and recommendation systems serving 400K+ monthly customers (Epsilon).
+}
+
+%----------SKILLS----------
+\section{Technical Skills}
+\small{
+\textbf{Languages \& Data:} Python, Java, SQL, Bash/Shell; Pandas \\
+\textbf{Cloud \& Orchestration:} AWS (Lambda, Step Functions, Glue, EC2, S3, Athena), Azure (Durable Functions, Data Factory, Logic Apps), Docker, Airflow, Databricks \\
+\textbf{ML / AI:} PySpark, ML/DL, statistics; LangChain, LangGraph; MCP; Jupyter \\
+\textbf{Quantum:} Qiskit, IBM Quantum; benchmarking hybrid classical--quantum workflows \\
+\textbf{Tools:} Git, Linux, \LaTeX
+}
+
+%----------EXPERIENCE----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Research Associate--2}{Oct 2024 -- Present}
+{Indian Institute of Science (IISc), Dept.\ of Computational and Data Sciences, Bengaluru}{}
+\resumeItemListStart
+    \resumeItem{Distributed HPC research in quantum computing and AI (DREAM Lab); authored work on classical--quantum FaaS and LLM/agentic serverless workflows at Core~A venues.}
+    \resumeItem{Deployed and profiled hybrid quantum--classical applications across multi-cloud FaaS (AWS, Azure) with IBM Quantum; evaluated scaling strategies (published latency/cost improvements vs.\ baselines).}
+    \resumeItem{Built state-management for agentic FaaS applications (externalized agent state across invocations; IEEE IPDPS Workshops 2025).}
+    \resumeItem{Characterized Model Context Protocol (MCP) on FaaS and benchmarked MCP on AWS Lambda (arXiv, 2025).}
+\resumeItemListEnd
+
+\resumeSubheading
+{Data Engineer I}{Aug 2022 -- Oct 2024}
+{Epsilon}{Bengaluru, India}
+\resumeItemListStart
+    \resumeItem{Data/ML engineer across healthcare, automobile, and telecom; delivered models serving recommendations to 400K+ monthly customers across brands and use cases.}
+    \resumeItem{Built ETL on 50M+ customer records with AWS Glue, PySpark, Athena; orchestrated end-to-end ML pipelines with Airflow.}
+    \resumeItem{Owned a reporting pipeline for 100K+ engagement events to improve training data quality, saving the team 30+ hours/month (Python, JupyterHub, Pandas).}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------PUBLICATIONS----------
+\section{Publications}
+\begin{itemize}[leftmargin=0.2in]
+    \item \small{\textbf{V.\ Jha} et al., ``AgentX: Towards Orchestrating Robust Agentic Workflow Patterns with FaaS-hosted MCP Services,'' arXiv preprint, Sept.\ 2025.}
+    \item \small{\textbf{V.\ Jha} et al., ``Towards Orchestrating Agentic Applications as FaaS Workflows,'' IEEE IPDPS Workshops (IPDPSW), 2025.}
+    \item \small{\textbf{V.\ Jha} et al., ``Choreography and Profiling of Quantum-Classical FaaS Workflows on Hybrid Clouds,'' IEEE/ACM CCGrid, 2025 (co-first author, short paper).}
+\end{itemize}
+
+%----------PROJECTS----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{Agentic AI \& MCP on serverless \,|\, Python, AWS Lambda, Step Functions, MCP}{2024 -- 2025}
+\resumeItemListStart
+    \resumeItem{Research implementation on orchestrating agents and MCP services on FaaS with benchmarking and profiling for latency, cost, and scale.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Solar panel cleaning robot (Final Year) \,|\, Sponsored R\&D, embedded/robotics}{Apr 2022 -- Aug 2022}
+\resumeItemListStart
+    \resumeItem{Govt.\ of Karnataka sponsored project (\textasciitilde INR~5 lakhs); qualified for VTU funding; Best Project Award (1\textsuperscript{st} of 70) and Best Project Presentation (2\textsuperscript{nd}).}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------EDUCATION----------
+\section{Education}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{R.V. College of Engineering (RVCE)}{Bengaluru, India}
+{B.E., Electrical and Electronics Engineering; CGPA: 8.15/10}{Aug 2018 -- May 2022}
+\resumeItemListStart
+    \resumeItem{Minor project: forecasting solar irradiance from time-series weather data.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\end{document}
