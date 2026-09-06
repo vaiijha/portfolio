@@ -1,6 +1,6 @@
 ---
 title: "Computer-use agent (Featurely AI)"
-description: "LangGraph agent for product testing via synthetic browser interactions, with fine-tuned planning and DOM selection."
+description: "Built v1 of a computer-use agent with LangGraph, Claude, and OpenAI APIs to automate complex web workflows via synthetic browser/human interactions."
 badge: "Contract"
 stack: "LangGraph, Claude, OpenAI APIs"
 dateRange: "Nov 2024 — Mar 2025"
@@ -8,9 +8,9 @@ dateRange: "Nov 2024 — Mar 2025"
 
 ## Summary
 
-Built a **v1 computer-use agent** for product testing—automating complex web workflows through synthetic browser interactions.
+Built **v1 of a computer-use agent** with LangGraph, Claude, and OpenAI APIs to automate complex web workflows via synthetic browser/human interactions.
 
 ## Highlights
 
 - Orchestrated with **LangGraph** using **Claude** and **OpenAI** APIs.
-- **Fine-tuned OpenAI models** for planning and DOM-element selection, reducing zero-shot task failure rates on real product flows.
+- **Fine-tuned OpenAI models** for planning and DOM-element selection; reduced task failure rates in zero-shot settings.

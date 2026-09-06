@@ -1,17 +1,18 @@
 ---
 title: "Offer recommendation pipelines (Epsilon)"
-description: "End-to-end ML/DL recommendation pipelines serving production customers across healthcare, automobile, and telecom."
+description: "Engineered ML/DL recommendation pipelines serving production customers across healthcare, automobile, and telecom."
 badge: "Industry"
-stack: "Python, PySpark, Airflow, AWS Glue"
+stack: "AWS Glue, PySpark, Athena, Airflow; ML/DL recommendation"
 dateRange: "Aug 2022 — Oct 2024"
 ---
 
 ## Summary
 
-Owned **end-to-end ML/DL recommendation pipelines** serving production customers across healthcare, automobile, and telecom.
+Engineered **ML/DL recommendation pipelines** serving production customers; **ETL** and **Airflow ML orchestration**; reporting pipeline for engagement events to accelerate retraining and feature experimentation.
 
 ## Highlights
 
 - Recommendations reaching **400K+ monthly customers** with **~6% sales lift**.
-- **ETL on 50M+ records** with AWS Glue, PySpark, and Athena; orchestrated ML pipelines with **Airflow**.
-- Reporting pipeline over **100K+ engagement events**, saving the team **30+ hours/month**.
+- **ETL on 50M+ customer records** with AWS Glue, PySpark, and Athena.
+- Reporting pipeline over **100K+ engagement events**, saving **30+ hours/month**.
+- Industries: **healthcare, automobile, telecom**.

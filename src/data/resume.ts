@@ -66,8 +66,8 @@ export const experience = [
     org: "Featurely AI",
     location: "Remote",
     bullets: [
-      "Computer-use agent v1 (LangGraph, Claude, OpenAI) for product testing — automating complex web workflows via synthetic browser interactions.",
-      "Fine-tuned OpenAI models for planning + DOM selection; reduced zero-shot failures.",
+      "Built v1 of a computer-use agent with LangGraph, Claude, and OpenAI APIs to automate complex web workflows via synthetic browser/human interactions.",
+      "Fine-tuned OpenAI models for planning and DOM-element selection; reduced task failure rates in zero-shot settings.",
     ],
   },
   {
@@ -107,13 +107,14 @@ export const projects = [
   {
     title: "Agentic AI & MCP on serverless",
     badge: "2024 — 2025",
-    stack: "Python, AWS Lambda, Step Functions, MCP, LangGraph",
+    stack: "Python, AWS Lambda, Step Functions, MCP, LangGraph/LangChain",
     bullets: [
-      "Agentic workflows (ReAct, Reflexion, LLMCompiler) on FaaS with externalized agent memory + tool-output caching.",
-      "Up to 17× lower latency, 66% lower cost, 88% fewer input tokens vs scaling VM baselines.",
+      "Agentic workflows (ReAct, Reflexion, LLMCompiler) adapted for serverless with custom state management, agent memory injection across invocations, and tool-output caching.",
+      "Characterized and benchmarked MCP on FaaS/AWS Lambda.",
+      "Up to 17× lower latency, ~66% lower cost, 88% fewer input tokens vs scaling VM baselines.",
     ],
     cardDesc:
-      "Agentic workflows (ReAct, Reflexion, LLMCompiler) on FaaS with externalized agent memory and tool-output caching.",
+      "Agentic workflows adapted for serverless with externalized agent memory, tool-output caching, and MCP benchmarking on AWS Lambda.",
     chips: ["17× lower latency", "66% lower cost", "88% fewer tokens"],
     featured: true,
     url: "/projects/agentic-mcp-on-serverless",
@@ -123,25 +124,26 @@ export const projects = [
     badge: "Nov 2024 — Mar 2025",
     stack: "LangGraph, Claude, OpenAI APIs",
     bullets: [
-      "v1 agent for product testing — automating complex web workflows via synthetic browser interactions.",
-      "Fine-tuned models for planning + DOM-element selection; reduced zero-shot task failure rates.",
+      "Built v1 of a computer-use agent with LangGraph, Claude, and OpenAI APIs to automate complex web workflows via synthetic browser/human interactions.",
+      "Fine-tuned OpenAI models for planning and DOM-element selection; reduced task failure rates in zero-shot settings.",
     ],
     cardDesc:
-      "v1 agent for product testing — automating web workflows via synthetic browser interactions; fine-tuned planning and DOM selection.",
-    chips: ["LangGraph", "Claude & OpenAI", "Reduced zero-shot failures"],
+      "Built v1 of a computer-use agent with LangGraph, Claude, and OpenAI APIs to automate complex web workflows via synthetic browser/human interactions.",
+    chips: ["LangGraph", "Claude & OpenAI", "Zero-shot reliability"],
     featured: true,
     url: "/projects/computer-use-agent-featurely",
   },
   {
     title: "Offer recommendation pipelines (Epsilon)",
     badge: "Aug 2022 — Oct 2024",
-    stack: "Python, PySpark, Airflow, AWS Glue",
+    stack: "AWS Glue, PySpark, Athena, Airflow; ML/DL recommendation",
     bullets: [
-      "End-to-end ML/DL recommendation serving production customers.",
-      "400K+ monthly customers; ~6% sales lift; ETL on 50M+ records; 100K+ engagement events; 30+ hrs/month saved.",
+      "Engineered ML/DL recommendation pipelines serving production customers; ETL; Airflow ML orchestration.",
+      "Reporting pipeline for engagement events to accelerate retraining and feature experimentation.",
+      "400K+ monthly customers; ~6% sales lift; 50M+ customer records; 100K+ engagement events; 30+ hours/month saved.",
     ],
     cardDesc:
-      "End-to-end ML/DL recommendation pipelines serving production customers across healthcare, automobile, and telecom.",
+      "Engineered ML/DL recommendation pipelines serving production customers across healthcare, automobile, and telecom.",
     chips: ["400K+ customers", "~6% sales lift", "50M+ records", "30+ hrs/month saved"],
     featured: true,
     url: "/projects/offer-recommendation-epsilon",

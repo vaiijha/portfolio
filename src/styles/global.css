@@ -17,6 +17,6 @@
 }
 
 .earlier-work-card {
-    background-color: var(--color-base-200);
-    border-color: color-mix(in oklch, var(--color-base-content) 22%, transparent);
+    background-color: color-mix(in oklch, var(--color-base-200) 85%, var(--color-base-300));
+    border-color: color-mix(in oklch, var(--color-base-content) 28%, transparent);
 }
