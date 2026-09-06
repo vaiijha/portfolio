@@ -30,7 +30,7 @@ const otherProjects = projects.filter((p) => !p.featured);
   {
     otherProjects.length > 0 && (
       <div class="space-y-2">
-        <p class="text-xs uppercase tracking-wide text-base-content/60 font-medium">Earlier work</p>
+        <p class="text-xs uppercase tracking-wide text-base-content/70 font-semibold">Earlier work</p>
         {otherProjects.map((p) => (
           <ProjectCard
             title={"cardTitle" in p && p.cardTitle ? p.cardTitle : p.title}
