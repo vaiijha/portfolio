@@ -105,27 +105,6 @@ export const publications = [
 
 export const projects = [
   {
-    title:
-      "KRIYA — FaaS-native control plane for a mutable agent workflow on AWS Lambda (IISc DREAM Lab)",
-    cardTitle: "KRIYA",
-    cardSubtitle:
-      "FaaS-native control plane for a mutable agent workflow on AWS Lambda (IISc DREAM Lab)",
-    badge: "IISc DREAM Lab",
-    stack: "AWS Lambda, DynamoDB, Lambda Destinations, SQS, Python, Go",
-    bullets: [
-      "Demo skill: literature survey (plan → workers/arxiv → synthesize).",
-      "Append-only mutation log in DynamoDB; graph G_v = fold(log); Version CAS commits; INV-1: commit mutation batch before dispatch.",
-      "Agents propose mutations; reconciler commits; reconciler sole Dynamo writer.",
-      "Shipped: Lambda Destinations + standard SQS (Destinations = wire, not a separate control plane); intents via ResultEnvelope.proposed[]; Go lowers to AddNode/AddEdge/Join.",
-      "Mutation/control-plane work in progress; parallel scheduling races not fully solved.",
-    ],
-    cardDesc:
-      "FaaS-native control plane for mutable agent workflows. Literature-survey demo; append-only mutation log with Version CAS; reconciler sole Dynamo writer.",
-    chips: ["Version CAS", "Lambda Destinations + SQS", "Reconciler commits"],
-    featured: true,
-    url: "/projects/kriya",
-  },
-  {
     title: "Agentic AI & MCP on serverless",
     badge: "2024 — 2025",
     stack: "Python, AWS Lambda, Step Functions, MCP, LangGraph",
