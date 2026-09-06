@@ -5,24 +5,24 @@ const { title, description, badge, stack, dateRange } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} sideBarActiveItemID="projects">
-  <article class="prose prose-lg max-w-prose prose-headings:tracking-tight">
-    <p class="not-prose mb-2">
+  <article class="project-prose prose prose-base max-w-3xl prose-headings:tracking-tight">
+    <p class="not-prose mb-1">
       <a href="/projects" class="text-sm link link-hover no-underline">← All projects</a>
     </p>
 
-    <h1 class="title my-2 text-3xl sm:text-4xl font-bold leading-tight">{title}</h1>
+    <h1 class="title my-1 text-2xl sm:text-3xl font-bold leading-tight">{title}</h1>
 
     {
       (badge || dateRange || stack) && (
-        <div class="not-prose flex flex-wrap items-center gap-2 mb-4 text-sm text-base-content/70">
-          {badge && <span class="badge badge-ghost">{badge}</span>}
+        <div class="not-prose flex flex-wrap items-center gap-2 mb-2 text-sm text-base-content/70">
+          {badge && <span class="badge badge-ghost badge-sm">{badge}</span>}
           {dateRange && <span>{dateRange}</span>}
           {stack && <span class="text-base-content/55">· {stack}</span>}
         </div>
       )
     }
 
-    <div class="divider my-4 not-prose" />
+    <div class="divider my-2 not-prose" />
     <slot />
   </article>
 </BaseLayout>
