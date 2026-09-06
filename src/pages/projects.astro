@@ -11,7 +11,7 @@ const otherProjects = projects.filter((p) => !p.featured);
 <BaseLayout title="Projects" sideBarActiveItemID="projects">
   <SectionHeading class="mb-3 sm:mb-4">Projects</SectionHeading>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4">
+  <div class="featured-projects-grid mb-4">
     {
       featuredProjects.map((p) => (
         <ProjectCard
@@ -30,7 +30,7 @@ const otherProjects = projects.filter((p) => !p.featured);
   {
     otherProjects.length > 0 && (
       <div class="space-y-2">
-        <p class="text-xs uppercase tracking-wide text-base-content/70 font-semibold">Earlier work</p>
+        <p class="earlier-work-label">Earlier work</p>
         {otherProjects.map((p) => (
           <ProjectCard
             title={"cardTitle" in p && p.cardTitle ? p.cardTitle : p.title}
