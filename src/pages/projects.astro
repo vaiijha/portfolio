@@ -15,7 +15,8 @@ const otherProjects = projects.filter((p) => !p.featured);
     {
       featuredProjects.map((p) => (
         <ProjectCard
-          title={p.title}
+          title={"cardTitle" in p && p.cardTitle ? p.cardTitle : p.title}
+          subtitle={"cardSubtitle" in p ? p.cardSubtitle : undefined}
           desc={p.cardDesc}
           url={p.url}
           badge={p.badge}
@@ -29,10 +30,11 @@ const otherProjects = projects.filter((p) => !p.featured);
   {
     otherProjects.length > 0 && (
       <div class="space-y-2">
-        <p class="text-xs uppercase tracking-wide text-base-content/45">Earlier work</p>
+        <p class="text-xs uppercase tracking-wide text-base-content/60 font-medium">Earlier work</p>
         {otherProjects.map((p) => (
           <ProjectCard
-            title={p.title}
+            title={"cardTitle" in p && p.cardTitle ? p.cardTitle : p.title}
+            subtitle={"cardSubtitle" in p ? p.cardSubtitle : undefined}
             desc={p.cardDesc}
             url={p.url}
             badge={p.badge}

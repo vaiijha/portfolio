@@ -107,6 +107,9 @@ export const projects = [
   {
     title:
       "KRIYA — FaaS-native control plane for a mutable agent workflow on AWS Lambda (IISc DREAM Lab)",
+    cardTitle: "KRIYA",
+    cardSubtitle:
+      "FaaS-native control plane for a mutable agent workflow on AWS Lambda (IISc DREAM Lab)",
     badge: "IISc DREAM Lab",
     stack: "AWS Lambda, DynamoDB, Lambda Destinations, SQS, Python, Go",
     bullets: [
@@ -120,7 +123,7 @@ export const projects = [
       "FaaS-native control plane for mutable agent workflows. Literature-survey demo; append-only mutation log with Version CAS; reconciler sole Dynamo writer.",
     chips: ["Version CAS", "Lambda Destinations + SQS", "Reconciler commits"],
     featured: true,
-    url: "#",
+    url: "/projects/kriya",
   },
   {
     title: "Agentic AI & MCP on serverless",
@@ -134,7 +137,7 @@ export const projects = [
       "Agentic workflows (ReAct, Reflexion, LLMCompiler) on FaaS with externalized agent memory and tool-output caching.",
     chips: ["17× lower latency", "66% lower cost", "88% fewer tokens"],
     featured: true,
-    url: "#",
+    url: "/projects/agentic-mcp-on-serverless",
   },
   {
     title: "Computer-use agent (Featurely AI)",
@@ -148,7 +151,7 @@ export const projects = [
       "v1 agent for product testing — automating web workflows via synthetic browser interactions; fine-tuned planning and DOM selection.",
     chips: ["LangGraph", "Claude & OpenAI", "Reduced zero-shot failures"],
     featured: true,
-    url: "#",
+    url: "/projects/computer-use-agent-featurely",
   },
   {
     title: "Offer recommendation pipelines (Epsilon)",
@@ -162,7 +165,7 @@ export const projects = [
       "End-to-end ML/DL recommendation pipelines serving production customers across healthcare, automobile, and telecom.",
     chips: ["400K+ customers", "~6% sales lift", "50M+ records", "30+ hrs/month saved"],
     featured: true,
-    url: "#",
+    url: "/projects/offer-recommendation-epsilon",
   },
   {
     title: "Solar panel cleaning robot (Final Year)",
@@ -175,6 +178,6 @@ export const projects = [
       "Govt. of Karnataka sponsored (~INR 5 lakhs); Best Project 1st of 70; Best Presentation 2nd.",
     chips: ["1st of 70 projects", "Govt. sponsored"],
     featured: false,
-    url: "#",
+    url: "/projects/solar-panel-cleaning-robot",
   },
 ] as const;

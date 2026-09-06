@@ -1,6 +1,15 @@
 ---
-const { title, desc, url, badge, chips = [], featured = true } = Astro.props;
+const {
+  title,
+  subtitle,
+  desc,
+  url,
+  badge,
+  chips = [],
+  featured = true,
+} = Astro.props;
 const isLink = url && url !== "#";
+const isInternal = isLink && url.startsWith("/");
 
 const initials = title
   .split(/\s+/)
@@ -13,8 +22,10 @@ const initials = title
 
 <article
   class:list={[
-    "card bg-base-200 border border-base-300 shadow-sm transition-shadow",
-    featured ? "hover:shadow-md" : "opacity-75 border-dashed",
+    "card shadow-sm transition-shadow",
+    featured
+      ? "bg-base-200 border border-base-300 hover:shadow-md"
+      : "earlier-work-card bg-base-200/90 border border-base-content/15 hover:shadow-sm",
   ]}
 >
   <div class="card-body gap-2 p-3 sm:p-4">
@@ -24,7 +35,7 @@ const initials = title
           "flex shrink-0 items-center justify-center rounded-md font-semibold",
           featured
             ? "h-9 w-9 text-xs bg-primary/15 text-primary"
-            : "h-7 w-7 text-[10px] bg-base-300 text-base-content/60",
+            : "h-7 w-7 text-[10px] bg-base-300 text-base-content/75",
         ]}
         aria-hidden="true"
       >
@@ -33,14 +44,30 @@ const initials = title
 
       <div class="min-w-0 flex-1">
         <div class="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
-          <h3
-            class:list={[
-              "font-semibold leading-snug",
-              featured ? "text-base sm:text-lg" : "text-sm text-base-content/70",
-            ]}
-          >
-            {title}
-          </h3>
+          <div class="min-w-0">
+            <h3
+              class:list={[
+                "font-semibold leading-snug",
+                featured ? "text-base sm:text-lg" : "text-sm text-base-content/85",
+              ]}
+            >
+              {title}
+            </h3>
+            {
+              subtitle && (
+                <p
+                  class:list={[
+                    "leading-snug mt-0.5",
+                    featured
+                      ? "text-xs sm:text-sm text-base-content/60"
+                      : "text-xs text-base-content/55",
+                  ]}
+                >
+                  {subtitle}
+                </p>
+              )
+            }
+          </div>
           {badge && (
             <span class="badge badge-ghost badge-xs sm:badge-sm whitespace-nowrap shrink-0">
               {badge}
@@ -51,7 +78,7 @@ const initials = title
         <p
           class:list={[
             "line-clamp-2 leading-snug mt-1",
-            featured ? "text-sm text-base-content/85" : "text-xs text-base-content/60",
+            featured ? "text-sm text-base-content/85" : "text-xs text-base-content/70",
           ]}
         >
           {desc}
@@ -77,16 +104,15 @@ const initials = title
     }
 
     {
-      !isLink && (
-        <p class="text-[11px] text-base-content/45 pl-12">Write-up coming soon</p>
-      )
-    }
-
-    {
       isLink && (
         <div class="card-actions justify-end pt-0">
-          <a href={url} target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-ghost">
-            View →
+          <a
+            href={url}
+            target={isInternal ? "_self" : "_blank"}
+            rel={isInternal ? undefined : "noopener noreferrer"}
+            class="btn btn-xs btn-ghost"
+          >
+            Read →
           </a>
         </div>
       )
