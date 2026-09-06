@@ -12,5 +12,4 @@ Final-year **embedded/robotics** project sponsored by the **Government of Karnat
 
 ## Highlights
 
-- Qualified for **VTU funding**.
 - **Best Project Award** (1st of 70 projects) and **Best Project Presentation** (2nd).
