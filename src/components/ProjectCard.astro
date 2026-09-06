@@ -1,60 +1,94 @@
 ---
 const { title, desc, url, badge, chips = [], featured = true } = Astro.props;
 const isLink = url && url !== "#";
+
+const initials = title
+  .split(/\s+/)
+  .filter((w: string) => w.length > 2 && !/^\(/.test(w))
+  .slice(0, 2)
+  .map((w: string) => w[0])
+  .join("")
+  .toUpperCase();
 ---
 
 <article
   class:list={[
     "card bg-base-200 border border-base-300 shadow-sm transition-shadow",
-    featured ? "hover:shadow-md" : "opacity-80 scale-[0.98]",
-    !featured && "border-dashed",
+    featured ? "hover:shadow-md" : "opacity-75 border-dashed",
   ]}
 >
-  <div class="card-body gap-3 p-4 sm:p-5">
-    <div class="flex flex-wrap items-start justify-between gap-2">
-      <h3
+  <div class="card-body gap-2 p-3 sm:p-4">
+    <div class="flex items-start gap-3">
+      <div
         class:list={[
-          "font-semibold leading-snug",
-          featured ? "text-lg sm:text-xl" : "text-base text-base-content/80",
+          "flex shrink-0 items-center justify-center rounded-md font-semibold",
+          featured
+            ? "h-9 w-9 text-xs bg-primary/15 text-primary"
+            : "h-7 w-7 text-[10px] bg-base-300 text-base-content/60",
         ]}
+        aria-hidden="true"
       >
-        {title}
-      </h3>
-      {badge && (
-        <span class="badge badge-ghost badge-sm whitespace-nowrap shrink-0">
-          {badge}
-        </span>
-      )}
-    </div>
+        {initials}
+      </div>
 
-    <p
-      class:list={[
-        "line-clamp-2 leading-relaxed",
-        featured ? "text-base text-base-content/90" : "text-sm text-base-content/70",
-      ]}
-    >
-      {desc}
-    </p>
+      <div class="min-w-0 flex-1">
+        <div class="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
+          <h3
+            class:list={[
+              "font-semibold leading-snug",
+              featured ? "text-base sm:text-lg" : "text-sm text-base-content/70",
+            ]}
+          >
+            {title}
+          </h3>
+          {badge && (
+            <span class="badge badge-ghost badge-xs sm:badge-sm whitespace-nowrap shrink-0">
+              {badge}
+            </span>
+          )}
+        </div>
+
+        <p
+          class:list={[
+            "line-clamp-2 leading-snug mt-1",
+            featured ? "text-sm text-base-content/85" : "text-xs text-base-content/60",
+          ]}
+        >
+          {desc}
+        </p>
+      </div>
+    </div>
 
     {
       chips.length > 0 && (
-        <div class="flex flex-wrap gap-1.5 pt-1">
+        <div class="flex flex-wrap gap-1 pt-0.5">
           {chips.map((chip: string) => (
-            <span class="badge badge-outline badge-sm font-normal">{chip}</span>
+            <span
+              class:list={[
+                "badge badge-outline font-normal",
+                featured ? "badge-sm" : "badge-xs",
+              ]}
+            >
+              {chip}
+            </span>
           ))}
         </div>
       )
     }
 
     {
-      isLink ? (
-        <div class="card-actions justify-end pt-1">
-          <a href={url} target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">
+      !isLink && (
+        <p class="text-[11px] text-base-content/45 pl-12">Write-up coming soon</p>
+      )
+    }
+
+    {
+      isLink && (
+        <div class="card-actions justify-end pt-0">
+          <a href={url} target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-ghost">
             View →
           </a>
         </div>
-      ) : (
-        <p class="text-xs text-base-content/50 pt-1">Research implementation — write-up coming soon</p>
       )
     }
   </div>

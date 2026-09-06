@@ -13,6 +13,6 @@ export const SITE_THEME = 'lofi';
 
 export const SITE_TITLE = 'Vaibhav Jha | Portfolio';
 export const SITE_DESCRIPTION =
-  'AI/ML engineer and researcher with 3+ years across industry data platforms and research at IISc—distributed systems, agentic AI, quantum–classical workflows, and scalable ML.';
+  'AI/ML and distributed systems engineer building and scaling GenAI applications, agentic workflows (LangGraph, LangChain, MCP), and large-scale ML pipelines and recommendation systems.';
 export const GENERATE_SLUG_FROM_TITLE = true
 export const TRANSITION_API = true

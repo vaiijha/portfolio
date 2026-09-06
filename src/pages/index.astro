@@ -20,32 +20,27 @@ const otherProjects = projects.filter((p) => !p.featured);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <section class="hero-section mb-12 sm:mb-16">
-    <p class="text-sm uppercase tracking-widest text-base-content/50 mb-3">
+  <section class="hero-section mb-6 sm:mb-8">
+    <p class="text-xs sm:text-sm uppercase tracking-widest text-base-content/50 mb-2">
       {person.location}
     </p>
 
-    <h1 class="text-4xl sm:text-5xl font-bold tracking-tight leading-tight mb-3">
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-2">
       {person.name}
     </h1>
 
-    <p class="text-xl sm:text-2xl font-medium text-primary leading-snug mb-5 max-w-prose">
+    <p class="text-base sm:text-lg font-medium text-primary leading-snug mb-3 max-w-prose">
       {roleLine}
     </p>
 
-    <p class="text-base sm:text-lg text-base-content/80 leading-relaxed max-w-prose mb-8">
+    <p class="text-sm sm:text-base text-base-content/75 leading-relaxed max-w-prose mb-5">
       {summary}
     </p>
 
-    <div class="flex flex-wrap gap-2 sm:gap-3">
+    <div class="flex flex-wrap gap-2">
+      <a class="btn btn-primary btn-sm" href={`mailto:${person.email}`}>Email</a>
       <a
-        class="btn btn-primary btn-sm sm:btn-md"
-        href={`mailto:${person.email}`}
-      >
-        Email
-      </a>
-      <a
-        class="btn btn-outline btn-sm sm:btn-md"
+        class="btn btn-outline btn-sm"
         href={person.urls.github}
         target="_blank"
         rel="noopener noreferrer"
@@ -53,7 +48,7 @@ const otherProjects = projects.filter((p) => !p.featured);
         GitHub
       </a>
       <a
-        class="btn btn-outline btn-sm sm:btn-md"
+        class="btn btn-outline btn-sm"
         href={person.urls.linkedin}
         target="_blank"
         rel="noopener noreferrer"
@@ -61,7 +56,7 @@ const otherProjects = projects.filter((p) => !p.featured);
         LinkedIn
       </a>
       <a
-        class="btn btn-outline btn-sm sm:btn-md"
+        class="btn btn-outline btn-sm"
         href={person.urls.scholar}
         target="_blank"
         rel="noopener noreferrer"
@@ -71,10 +66,10 @@ const otherProjects = projects.filter((p) => !p.featured);
     </div>
   </section>
 
-  <section class="mb-12 sm:mb-16">
-    <SectionHeading>Projects</SectionHeading>
+  <section class="mb-8 sm:mb-10">
+    <SectionHeading class="mb-3 sm:mb-4">Projects</SectionHeading>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
       {
         featuredProjects.map((p) => (
           <ProjectCard
@@ -91,7 +86,8 @@ const otherProjects = projects.filter((p) => !p.featured);
 
     {
       otherProjects.length > 0 && (
-        <div class="mt-4 sm:mt-5">
+        <div class="mt-3 sm:mt-4 space-y-2">
+          <p class="text-xs uppercase tracking-wide text-base-content/45">Earlier work</p>
           {otherProjects.map((p) => (
             <ProjectCard
               title={p.title}
@@ -106,7 +102,7 @@ const otherProjects = projects.filter((p) => !p.featured);
       )
     }
 
-    <p class="mt-4 text-sm text-base-content/60">
+    <p class="mt-3 text-sm text-base-content/55">
       <a href="/projects" class="link link-hover">View all projects →</a>
     </p>
   </section>

@@ -11,14 +11,15 @@ export const person = {
   },
 } as const;
 
-export const headline = "AI/ML engineer and researcher";
+export const headline =
+  "AI/ML and distributed systems engineer with 4 years of experience building and scaling GenAI applications and large-scale ML pipelines and recommendation systems.";
 
-/** Short hero tagline — facts from headline + summary focus areas */
+/** Short hero tagline — derived from headline focus, not rendered as giant H1 */
 export const roleLine =
-  "Production AI · agentic workflows & MCP on serverless · distributed systems";
+  "GenAI & agent systems · distributed ML · production scale on AWS/Azure";
 
 export const summary =
-  "AI/ML engineer and researcher with 3+ years across industry data platforms and research at IISc. Focus on distributed and serverless systems, agentic AI and MCP on FaaS, quantum–classical workflows, and scalable ML—with peer-reviewed papers at IEEE CCGrid, IEEE IPDPS Workshops, and an arXiv preprint. Previously built ETL and ML pipelines over 50M+ records and recommendation systems serving 400K+ monthly customers (Epsilon).";
+  "Built multi-agent AI systems with LangGraph/LangChain, MCP and RAG by implementing agentic workflow patterns (ReAct, Reflexion, LLMCompiler). Deployed at production scale across AWS and Azure; LLM optimizations for latency, cost, and end-user recommendations.";
 
 export const skillCategories = [
   {
@@ -32,7 +33,8 @@ export const skillCategories = [
   },
   {
     label: "ML / AI",
-    items: "PySpark, ML/DL, statistics; LangChain, LangGraph; MCP; Jupyter",
+    items:
+      "PySpark, ML/DL, statistics; LangChain, LangGraph; MCP; RAG; Jupyter",
   },
   {
     label: "Quantum",
@@ -47,26 +49,36 @@ export const skillCategories = [
 
 export const experience = [
   {
-    title: "Research Associate–2",
+    title: "Research Staff–2",
     dateRange: "Oct 2024 — Present",
     org: "Indian Institute of Science (IISc), Dept. of Computational and Data Sciences",
     location: "Bengaluru",
     bullets: [
-      "Distributed HPC research in quantum computing and AI (DREAM Lab); authored work on classical–quantum FaaS and LLM/agentic serverless workflows at Core A venues.",
-      "Deployed and profiled hybrid quantum–classical applications across multi-cloud FaaS (AWS, Azure) with IBM Quantum; evaluated scaling strategies (published latency/cost improvements vs. baselines).",
-      "Built state-management for agentic FaaS applications (externalized agent state across invocations; IEEE IPDPS Workshops 2025).",
-      "Characterized Model Context Protocol (MCP) on FaaS and benchmarked MCP on AWS Lambda (arXiv, 2025).",
+      "Agentic FaaS: ReAct/Reflexion/LLMCompiler + state/memory/caching → 17× latency / 66% cost / 88% fewer input tokens vs VM baselines.",
+      "Multi-cloud profiling with DP-based partitioning across AWS and Azure → up to 80% latency reduction; 70% infra cost cut via parallel scaling.",
+      "Multi-agent / edge-AI inference for drone swarms under resource constraints.",
+      "Managed 2 research staff + 3 master's students (GenAI + Quantum workflows).",
+    ],
+  },
+  {
+    title: "AI Engineering Consultant (Contract)",
+    dateRange: "Nov 2024 — Mar 2025",
+    org: "Featurely AI",
+    location: "Remote",
+    bullets: [
+      "Computer-use agent v1 (LangGraph, Claude, OpenAI) for product testing — automating complex web workflows via synthetic browser interactions.",
+      "Fine-tuned OpenAI models for planning + DOM selection; reduced zero-shot failures.",
     ],
   },
   {
     title: "Data Engineer I",
     dateRange: "Aug 2022 — Oct 2024",
     org: "Epsilon",
-    location: "Bengaluru, India",
+    location: "Bengaluru",
     bullets: [
-      "Data/ML engineer across healthcare, automobile, and telecom; delivered models serving recommendations to 400K+ monthly customers across brands and use cases.",
-      "Built ETL on 50M+ customer records with AWS Glue, PySpark, Athena; orchestrated end-to-end ML pipelines with Airflow.",
-      "Owned a reporting pipeline for 100K+ engagement events to improve training data quality, saving the team 30+ hours/month (Python, JupyterHub, Pandas).",
+      "Recs: 400K+ monthly customers; ~6% sales lift.",
+      "ETL 50M+ records; Airflow ML pipelines; 100K+ engagement events; 30+ hrs/month saved.",
+      "Industries: healthcare, automobile, telecom.",
     ],
   },
 ] as const;
@@ -85,22 +97,70 @@ export const education = [
 ] as const;
 
 export const publications = [
-  "V. Jha et al., “AgentX: Towards Orchestrating Robust Agentic Workflow Patterns with FaaS-hosted MCP Services,” arXiv preprint, Sept. 2025.",
-  "V. Jha et al., “Towards Orchestrating Agentic Applications as FaaS Workflows,” IEEE IPDPS Workshops (IPDPSW), 2025.",
-  "V. Jha et al., “Choreography and Profiling of Quantum-Classical FaaS Workflows on Hybrid Clouds,” IEEE/ACM CCGrid, 2025 (co-first author, short paper).",
+  "V. Jha et al., “Optimizing FaaS Platforms for MCP-enabled Agentic Workflows,” IEEE ICWS 2026 / arXiv (2nd author).",
+  "V. Jha et al., “XFAGENT: Automating Multi-Cloud Deployment of Agentic Workflows on FaaS Platforms,” IEEE/ACM CCGrid 2026 short paper (2nd author).",
+  "V. Jha et al., “Towards Orchestrating Agentic Applications as FaaS Workflows,” IEEE IPDPSW 2025 (2nd author).",
+  "V. Jha et al., “Choreography and Profiling of Quantum-Classical FaaS Workflows on Hybrid Clouds,” IEEE/ACM CCGrid 2025 (co-first author, short paper).",
 ] as const;
 
 export const projects = [
   {
-    title: "Agentic AI & MCP on serverless",
-    badge: "2024 — 2025",
-    stack: "Python, AWS Lambda, Step Functions, MCP",
+    title:
+      "KRIYA — FaaS-native control plane for a mutable agent workflow on AWS Lambda (IISc DREAM Lab)",
+    badge: "IISc DREAM Lab",
+    stack: "AWS Lambda, DynamoDB, Lambda Destinations, SQS, Python, Go",
     bullets: [
-      "Research implementation on orchestrating agents and MCP services on FaaS with benchmarking and profiling for latency, cost, and scale.",
+      "Demo skill: literature survey (plan → workers/arxiv → synthesize).",
+      "Append-only mutation log in DynamoDB; graph G_v = fold(log); Version CAS commits; INV-1: commit mutation batch before dispatch.",
+      "Agents propose mutations; reconciler commits; reconciler sole Dynamo writer.",
+      "Shipped: Lambda Destinations + standard SQS (Destinations = wire, not a separate control plane); intents via ResultEnvelope.proposed[]; Go lowers to AddNode/AddEdge/Join.",
+      "Mutation/control-plane work in progress; parallel scheduling races not fully solved.",
     ],
     cardDesc:
-      "Orchestrating agents and MCP services on FaaS with benchmarking for latency, cost, and scale.",
-    chips: ["MCP on FaaS", "AWS Lambda", "Latency & cost profiling"],
+      "FaaS-native control plane for mutable agent workflows. Literature-survey demo; append-only mutation log with Version CAS; reconciler sole Dynamo writer.",
+    chips: ["Version CAS", "Lambda Destinations + SQS", "Reconciler commits"],
+    featured: true,
+    url: "#",
+  },
+  {
+    title: "Agentic AI & MCP on serverless",
+    badge: "2024 — 2025",
+    stack: "Python, AWS Lambda, Step Functions, MCP, LangGraph",
+    bullets: [
+      "Agentic workflows (ReAct, Reflexion, LLMCompiler) on FaaS with externalized agent memory + tool-output caching.",
+      "Up to 17× lower latency, 66% lower cost, 88% fewer input tokens vs scaling VM baselines.",
+    ],
+    cardDesc:
+      "Agentic workflows (ReAct, Reflexion, LLMCompiler) on FaaS with externalized agent memory and tool-output caching.",
+    chips: ["17× lower latency", "66% lower cost", "88% fewer tokens"],
+    featured: true,
+    url: "#",
+  },
+  {
+    title: "Computer-use agent (Featurely AI)",
+    badge: "Nov 2024 — Mar 2025",
+    stack: "LangGraph, Claude, OpenAI APIs",
+    bullets: [
+      "v1 agent for product testing — automating complex web workflows via synthetic browser interactions.",
+      "Fine-tuned models for planning + DOM-element selection; reduced zero-shot task failure rates.",
+    ],
+    cardDesc:
+      "v1 agent for product testing — automating web workflows via synthetic browser interactions; fine-tuned planning and DOM selection.",
+    chips: ["LangGraph", "Claude & OpenAI", "Reduced zero-shot failures"],
+    featured: true,
+    url: "#",
+  },
+  {
+    title: "Offer recommendation pipelines (Epsilon)",
+    badge: "Aug 2022 — Oct 2024",
+    stack: "Python, PySpark, Airflow, AWS Glue",
+    bullets: [
+      "End-to-end ML/DL recommendation serving production customers.",
+      "400K+ monthly customers; ~6% sales lift; ETL on 50M+ records; 100K+ engagement events; 30+ hrs/month saved.",
+    ],
+    cardDesc:
+      "End-to-end ML/DL recommendation pipelines serving production customers across healthcare, automobile, and telecom.",
+    chips: ["400K+ customers", "~6% sales lift", "50M+ records", "30+ hrs/month saved"],
     featured: true,
     url: "#",
   },
@@ -109,11 +169,11 @@ export const projects = [
     badge: "Apr 2022 — Aug 2022",
     stack: "Sponsored R&D, embedded/robotics",
     bullets: [
-      "Govt. of Karnataka sponsored project (~INR 5 lakhs); qualified for VTU funding; Best Project Award (1st of 70) and Best Project Presentation (2nd).",
+      "Govt. of Karnataka sponsored project (~INR 5 lakhs); Best Project Award (1st of 70) and Best Project Presentation (2nd).",
     ],
     cardDesc:
-      "Karnataka-sponsored R&D; VTU funding qualified; Best Project Award (1st of 70).",
-    chips: ["1st of 70 projects", "VTU funding", "Govt. sponsored"],
+      "Govt. of Karnataka sponsored (~INR 5 lakhs); Best Project 1st of 70; Best Presentation 2nd.",
+    chips: ["1st of 70 projects", "Govt. sponsored"],
     featured: false,
     url: "#",
   },
