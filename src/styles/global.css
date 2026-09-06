@@ -15,3 +15,8 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+.earlier-work-card {
+    background-color: var(--color-base-200);
+    border-color: color-mix(in oklch, var(--color-base-content) 22%, transparent);
+}
