@@ -1,0 +1,61 @@
+---
+const { title, desc, url, badge, chips = [], featured = true } = Astro.props;
+const isLink = url && url !== "#";
+---
+
+<article
+  class:list={[
+    "card bg-base-200 border border-base-300 shadow-sm transition-shadow",
+    featured ? "hover:shadow-md" : "opacity-80 scale-[0.98]",
+    !featured && "border-dashed",
+  ]}
+>
+  <div class="card-body gap-3 p-4 sm:p-5">
+    <div class="flex flex-wrap items-start justify-between gap-2">
+      <h3
+        class:list={[
+          "font-semibold leading-snug",
+          featured ? "text-lg sm:text-xl" : "text-base text-base-content/80",
+        ]}
+      >
+        {title}
+      </h3>
+      {badge && (
+        <span class="badge badge-ghost badge-sm whitespace-nowrap shrink-0">
+          {badge}
+        </span>
+      )}
+    </div>
+
+    <p
+      class:list={[
+        "line-clamp-2 leading-relaxed",
+        featured ? "text-base text-base-content/90" : "text-sm text-base-content/70",
+      ]}
+    >
+      {desc}
+    </p>
+
+    {
+      chips.length > 0 && (
+        <div class="flex flex-wrap gap-1.5 pt-1">
+          {chips.map((chip: string) => (
+            <span class="badge badge-outline badge-sm font-normal">{chip}</span>
+          ))}
+        </div>
+      )
+    }
+
+    {
+      isLink ? (
+        <div class="card-actions justify-end pt-1">
+          <a href={url} target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">
+            View →
+          </a>
+        </div>
+      ) : (
+        <p class="text-xs text-base-content/50 pt-1">Research implementation — write-up coming soon</p>
+      )
+    }
+  </div>
+</article>

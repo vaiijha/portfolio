@@ -9,7 +9,7 @@
  * Examples: lofi (minimal gray), night, dracula, nord, corporate, business, garden,
  * cupcake, bumblebee, synthwave, cyberpunk, forest, aqua, pastel, sunset, dim, winter, …
  */
-export const SITE_THEME = 'caramellatte';
+export const SITE_THEME = 'lofi';
 
 export const SITE_TITLE = 'Vaibhav Jha | Portfolio';
 export const SITE_DESCRIPTION =

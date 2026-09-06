@@ -11,8 +11,11 @@ export const person = {
   },
 } as const;
 
-export const headline =
-  "AI/ML engineer and researcher";
+export const headline = "AI/ML engineer and researcher";
+
+/** Short hero tagline — facts from headline + summary focus areas */
+export const roleLine =
+  "Production AI · agentic workflows & MCP on serverless · distributed systems";
 
 export const summary =
   "AI/ML engineer and researcher with 3+ years across industry data platforms and research at IISc. Focus on distributed and serverless systems, agentic AI and MCP on FaaS, quantum–classical workflows, and scalable ML—with peer-reviewed papers at IEEE CCGrid, IEEE IPDPS Workshops, and an arXiv preprint. Previously built ETL and ML pipelines over 50M+ records and recommendation systems serving 400K+ monthly customers (Epsilon).";
@@ -96,7 +99,9 @@ export const projects = [
       "Research implementation on orchestrating agents and MCP services on FaaS with benchmarking and profiling for latency, cost, and scale.",
     ],
     cardDesc:
-      "Python, AWS Lambda, Step Functions, MCP — orchestrating agents and MCP on FaaS with benchmarking for latency, cost, and scale.",
+      "Orchestrating agents and MCP services on FaaS with benchmarking for latency, cost, and scale.",
+    chips: ["MCP on FaaS", "AWS Lambda", "Latency & cost profiling"],
+    featured: true,
     url: "#",
   },
   {
@@ -107,7 +112,9 @@ export const projects = [
       "Govt. of Karnataka sponsored project (~INR 5 lakhs); qualified for VTU funding; Best Project Award (1st of 70) and Best Project Presentation (2nd).",
     ],
     cardDesc:
-      "Sponsored R&D, embedded/robotics — Karnataka-sponsored project; VTU funding qualified; Best Project and presentation awards.",
+      "Karnataka-sponsored R&D; VTU funding qualified; Best Project Award (1st of 70).",
+    chips: ["1st of 70 projects", "VTU funding", "Govt. sponsored"],
+    featured: false,
     url: "#",
   },
 ] as const;
