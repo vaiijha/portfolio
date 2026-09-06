@@ -14,6 +14,10 @@ export const person = {
 export const headline =
   "AI/ML and distributed systems engineer with 4 years of experience building and scaling GenAI applications and large-scale ML pipelines and recommendation systems.";
 
+/** Short hero tagline — derived from headline focus, not rendered as giant H1 */
+export const roleLine =
+  "GenAI & agent systems · distributed ML · production scale on AWS/Azure";
+
 export const summary =
   "Built multi-agent AI systems with LangGraph/LangChain, MCP and RAG by implementing agentic workflow patterns (ReAct, Reflexion, LLMCompiler). Deployed at production scale across AWS and Azure; LLM optimizations for latency, cost, and end-user recommendations.";
 
@@ -101,6 +105,24 @@ export const publications = [
 
 export const projects = [
   {
+    title:
+      "KRIYA — FaaS-native control plane for a mutable agent workflow on AWS Lambda (IISc DREAM Lab)",
+    badge: "IISc DREAM Lab",
+    stack: "AWS Lambda, DynamoDB, Lambda Destinations, SQS, Python, Go",
+    bullets: [
+      "Demo skill: literature survey (plan → workers/arxiv → synthesize).",
+      "Append-only mutation log in DynamoDB; graph G_v = fold(log); Version CAS commits; INV-1: commit mutation batch before dispatch.",
+      "Agents propose mutations; reconciler commits; reconciler sole Dynamo writer.",
+      "Shipped: Lambda Destinations + standard SQS (Destinations = wire, not a separate control plane); intents via ResultEnvelope.proposed[]; Go lowers to AddNode/AddEdge/Join.",
+      "Mutation/control-plane work in progress; parallel scheduling races not fully solved.",
+    ],
+    cardDesc:
+      "FaaS-native control plane for mutable agent workflows. Literature-survey demo; append-only mutation log with Version CAS; reconciler sole Dynamo writer.",
+    chips: ["Version CAS", "Lambda Destinations + SQS", "Reconciler commits"],
+    featured: true,
+    url: "#",
+  },
+  {
     title: "Agentic AI & MCP on serverless",
     badge: "2024 — 2025",
     stack: "Python, AWS Lambda, Step Functions, MCP, LangGraph",
@@ -109,7 +131,9 @@ export const projects = [
       "Up to 17× lower latency, 66% lower cost, 88% fewer input tokens vs scaling VM baselines.",
     ],
     cardDesc:
-      "Agentic workflows (ReAct, Reflexion, LLMCompiler) on FaaS with externalized agent memory + tool-output caching — up to 17× lower latency, 66% lower cost, 88% fewer input tokens vs VM baselines.",
+      "Agentic workflows (ReAct, Reflexion, LLMCompiler) on FaaS with externalized agent memory and tool-output caching.",
+    chips: ["17× lower latency", "66% lower cost", "88% fewer tokens"],
+    featured: true,
     url: "#",
   },
   {
@@ -121,7 +145,9 @@ export const projects = [
       "Fine-tuned models for planning + DOM-element selection; reduced zero-shot task failure rates.",
     ],
     cardDesc:
-      "v1 agent for product testing — automating complex web workflows via synthetic browser interactions; fine-tuned models for planning + DOM-element selection; reduced zero-shot task failure rates.",
+      "v1 agent for product testing — automating web workflows via synthetic browser interactions; fine-tuned planning and DOM selection.",
+    chips: ["LangGraph", "Claude & OpenAI", "Reduced zero-shot failures"],
+    featured: true,
     url: "#",
   },
   {
@@ -133,7 +159,9 @@ export const projects = [
       "400K+ monthly customers; ~6% sales lift; ETL on 50M+ records; 100K+ engagement events; 30+ hrs/month saved.",
     ],
     cardDesc:
-      "End-to-end ML/DL recommendation serving production customers — 400K+ monthly customers; ~6% sales lift; ETL on 50M+ records; 100K+ engagement events; 30+ hrs/month saved.",
+      "End-to-end ML/DL recommendation pipelines serving production customers across healthcare, automobile, and telecom.",
+    chips: ["400K+ customers", "~6% sales lift", "50M+ records", "30+ hrs/month saved"],
+    featured: true,
     url: "#",
   },
   {
@@ -145,6 +173,8 @@ export const projects = [
     ],
     cardDesc:
       "Govt. of Karnataka sponsored (~INR 5 lakhs); Best Project 1st of 70; Best Presentation 2nd.",
+    chips: ["1st of 70 projects", "Govt. sponsored"],
+    featured: false,
     url: "#",
   },
 ] as const;
